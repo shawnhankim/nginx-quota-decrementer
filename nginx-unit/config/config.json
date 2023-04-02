@@ -1,0 +1,15 @@
+{
+    "listeners":{
+        "*:9876":{
+            "pass":"applications/quota_decrement_app"
+        }
+    },
+
+    "applications":{
+        "quota_decrement_app": {
+            "type": "python 3",
+            "path": "/var/www/",
+            "module": "quota_decrement"
+        }
+    }
+}
