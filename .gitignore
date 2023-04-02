@@ -12,3 +12,4 @@ oidc_access_tokens.json
 oidc_id_tokens.json
 oidc_refresh_tokens.json
 *.db
+*.log
