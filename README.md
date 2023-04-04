@@ -1,5 +1,5 @@
 # nginx-quota-decrementer
-NGINX quota decrement service for distributed systems such as API gateway.
+NGINX quota decrement service for distributed systems such as API gateways.
 
 ## Getting Started
 
