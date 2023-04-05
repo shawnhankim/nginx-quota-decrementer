@@ -3,7 +3,9 @@ services:
  nginx_quota_decrementer:
   container_name: nginx_quota_decrementer
   image: nginx_quota_decrementer
-  build: .
+  build:
+    context: ./
+    dockerfile: ./docker/Dockerfile
   volumes:
    - ./nginx_unit/config:/docker-entrypoint.d/
    - ./nginx_unit/log/unit.log:/var/log/unit.log
