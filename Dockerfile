@@ -12,7 +12,7 @@ RUN apt update && apt install -y python3-pip vim curl lsof                    \
 
 RUN mkdir -p           /var/log/quota
 RUN chown -R unit:unit /var/log/quota
-RUN chmod -R 777       /var/log/quota
+RUN chmod -R 744       /var/log/quota
 
 WORKDIR /var/www/
 ENV PYTHONPATH "/var/www/"
