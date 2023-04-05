@@ -2,9 +2,9 @@ import logging
 
 from quota_decrement import quota_decrement
 
-def application(environ, start_response):
+def application(env, start_response):
     start_response("200 OK", [("Content-Type", "text/plain")])
-    quota_decrement()
+    quota_decrement(env)
     return (b"Hello, NGINX Quota Decrementer on Unit!\n")
 
 
