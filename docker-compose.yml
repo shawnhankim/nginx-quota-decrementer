@@ -9,6 +9,7 @@ services:
   volumes:
    - ./nginx_unit/config:/docker-entrypoint.d/
    - ./nginx_unit/log/:/var/log/
+   - ./nginx_unit/log/quota/:/var/log/quota/
    - ./nginx_unit/state:/var/lib/quota/state/
    - ./core:/var/www
   ports:
