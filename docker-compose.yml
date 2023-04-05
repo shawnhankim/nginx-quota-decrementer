@@ -1,16 +1,22 @@
 version: "3"
 services:
- nginx_quota_decrementer:
-  container_name: nginx_quota_decrementer
-  image: nginx_quota_decrementer
-  build:
-    context: ./
-    dockerfile: ./docker/Dockerfile
-  volumes:
-   - ./nginx_unit/config:/docker-entrypoint.d/
-   - ./nginx_unit/log/:/var/log/
-   - ./nginx_unit/log/quota/:/var/log/quota/
-   - ./nginx_unit/state:/var/lib/quota/state/
-   - ./core:/var/www
-  ports:
-   - "9876:9876"
+  nginx_quota_decrementer:
+    hostname: nginx_quota_decrementer
+    container_name: nginx_quota_decrementer
+    image: nginx_quota_decrementer
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./nginx_unit/config:/docker-entrypoint.d/
+      - ./nginx_unit/log/:/var/log/
+      - ./nginx_unit/log/quota/:/var/log/quota/
+      - ./nginx_unit/state:/var/lib/quota/state/
+      - ./core:/var/www
+    ports:
+      - "9876:9876"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
