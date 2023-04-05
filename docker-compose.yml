@@ -1,13 +1,13 @@
 version: "3"
 services:
- unit:
+ nginx_quota_decrementer:
   container_name: nginx_quota_decrementer
   image: nginx_quota_decrementer
   build: .
   volumes:
-   - ./nginx-unit/config:/docker-entrypoint.d/
-   - ./nginx-unit/log/unit.log:/var/log/unit.log
-   - ./nginx-unit/state:/var/lib/nginx-quota/state/
+   - ./nginx_unit/config:/docker-entrypoint.d/
+   - ./nginx_unit/log/unit.log:/var/log/unit.log
+   - ./nginx_unit/state:/var/lib/quota/state/
    - ./core:/var/www
   ports:
    - "9876:9876"

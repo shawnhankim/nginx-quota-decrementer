@@ -1,6 +1,6 @@
 FROM nginx/unit:1.29.1-python3.11
 
-COPY nginx-unit/config/requirements.txt /config/requirements.txt
+COPY requirements.txt /config/requirements.txt
 
 # PIP isn't installed by default, so we install it first.
 # Next, we install the requirements, remove PIP, and perform image cleanup.
@@ -14,4 +14,5 @@ RUN mkdir -p           /var/log/quota
 RUN chown -R unit:unit /var/log/quota
 RUN chmod -R 777       /var/log/quota
 
-EXPOSE 8000
+WORKDIR /var/www/
+ENV PYTHONPATH "/var/www/"

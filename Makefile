@@ -1,3 +1,6 @@
+PYTHONPATH=$(PWD)/core
+export PYTHONPATH
+
 start:
 	docker-compose up -d
 
